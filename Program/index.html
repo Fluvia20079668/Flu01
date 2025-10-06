@@ -1,0 +1,79 @@
+<HTml>
+
+<head>
+    <script src="ex1.js"></script>
+    <script src="ex2.js"></script>
+    <script src="ex3.js"></script>
+    <script src="ex4.js"></script>
+</head>
+
+<body>
+    <h1>Exercise 1</h1>
+    <p> <input type="text" id="weight">
+        <!--//replace check function.-->
+        <button onclick="check()">Check Baggage</button></p>
+
+    <p>
+        <input type="text" id="removed" style='display:none;'>
+        <!--//replace remove function.-->
+        <button id='remB' onclick="remove()" style='display:none;'>Remove this much baggage (kg)</button>
+
+    </p>
+
+    <h1>Exercise 2</h1>
+    <p><button onclick="euler1()">Press for solution to project Euler</button>
+    </p>
+
+    <p>
+        <label for="a:">A</label> <input type="text" id="a">
+        <label for="b:">B</label><input type="text" id="b">
+        <label for="n:">N</label> <input type="text" id="n">
+
+    </p>
+    <p><button onclick="eulerCustom()">Press for custom sum of multiples</button>
+
+        <h1>Exercise 3</h1>
+        <p>
+            Sum of multiples of a or b in list l.
+            <label for="a:">A</label> <input type="text" id="a1"><br>
+            <label for="b:">B</label><input type="text" id="b1"><br>
+            <label for="l:">L</label> <input type="text" id="l">
+
+        </p>
+        <p><button onclick="eulerlist()">Press for solution to project Euler</button>
+        </p>
+
+        <p>
+
+            Part 1: compute the sum of multiples of elements in list a, found in list l. List a is of length 2
+            <br> Part 1: compute the sum of multiples of elements in list a, found in list l. List a may be any length
+            <label for="aList:">A</label> <input type="text" id="aList">
+            <label for="mList:">L</label> <input type="text" id="mList">
+
+        </p>
+        <p><button onclick="euler2Lists()">Press for custom sum of multiples</button>
+        </p>
+
+
+
+        <p><button onclick="euler2Lists1()">Press for custom sum of multiples</button>
+
+        </p>
+        <p>
+            <h1>Exercise 4</h1>
+
+            <p>
+                Enter Input value<br>
+                <input type="text" id="inputData" placeholder="e.g. 3 5 : 1 2 3 4 5 6 7 8 9">
+            </p>
+
+
+            <button onclick="factorsAndMultiples()">Press</button>
+            <h4>Output:</h4>
+            <p id="output"></p>
+        </p>
+
+
+</body>
+
+</HTml>
