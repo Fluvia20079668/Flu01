@@ -1,19 +1,23 @@
-function factorsAndMultiples1() 
-{
+function factorsAndMultiples1() {
     let input = document.getElementById("inputData1").value.trim();
 
     try {
-        // Split input into divisors and list
         let parts = input.split(":");
-        if (parts.length !== 2) throw "Invalid format";
+        if (parts.length !== 2) throw "Invalid format. Use 'a b : list'.";
 
-        // Convert divisors using parse(), will throw if invalid
+        // Split and check divisors
         let rawFilters = parts[0].trim().split(" ");
-        let filters = rawFilters.map(f => parse(f));
+        let filters = rawFilters.map(f => {
+            if (isNaN(f) || f === "") throw "Error: '" + f + "' is not a number in divisors.";
+            return Number(f);
+        });
 
-        // Convert list numbers using parse(), will throw if invalid
+        // Split and check list numbers
         let rawList = parts[1].trim().split(" ");
-        let list = rawList.map(n => parse(n));
+        let list = rawList.map(n => {
+            if (isNaN(n) || n === "") throw "Error: '" + n + "' is not a number in list.";
+            return Number(n);
+        });
 
         // Calculate sum
         let sum = 0;
@@ -21,7 +25,7 @@ function factorsAndMultiples1()
             for (let f of filters) {
                 if (num % f === 0) {
                     sum += num;
-                    break;
+                    break; // avoid double-counting
                 }
             }
         }
@@ -29,7 +33,7 @@ function factorsAndMultiples1()
         document.getElementById("output1").innerText = sum + " : " + input;
 
     } catch (err) {
-        // If any parse fails → corrupt
-        document.getElementById("output1").innerText = "corrupt : " + input;
+        // Show error message in output
+        document.getElementById("output1").innerText = err;
     }
 }
